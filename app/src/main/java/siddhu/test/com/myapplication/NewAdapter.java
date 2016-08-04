@@ -71,6 +71,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.NewsViewHolder> 
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "this is siddh"+position, Toast.LENGTH_SHORT).show();
+                DetailsActivity.start(view.getContext(),position);
             }
         });
         Glide.with(holder.newsImage.getContext()).load(currentNewsObject.getImageUrl()).into(holder.newsImage);
