@@ -77,7 +77,8 @@ public class DetailsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);*/
         switch (item.getItemId()) {
             case android.R.id.home:
-                onBackPressed();
+                //onBackPressed();
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
