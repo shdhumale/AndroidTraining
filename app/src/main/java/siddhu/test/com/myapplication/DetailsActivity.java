@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -20,6 +21,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     WebView webView;
     ProgressBar progressBar;
+    static Context globalContext;
 
     private static final int DEFAULT_POSITION=-1;
     private static final String KEY_POSITION="position";
@@ -33,6 +35,8 @@ public class DetailsActivity extends AppCompatActivity {
         int position = getIntent().getIntExtra(KEY_POSITION,DEFAULT_POSITION);
         NewsObjects newsObjects = NewsObjects.getObjNewsObjects().get(position);
         getSupportActionBar().setTitle(newsObjects.getTitle());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient(){
             @Override
@@ -50,8 +54,40 @@ public class DetailsActivity extends AppCompatActivity {
         webView.loadUrl(newsObjects.getDetailsUrl());
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+       /* switch (item.getItemId()) {
+            case android.R.id.home
+                return true;
+            default:
+            return super.onOptionsItemSelected(item);
+        }*/
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+       /* int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.activity_details_webview) {
+            Intent intent = new Intent(globalContext, MainActivity.class);
+            globalContext.startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);*/
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
     public static void start (Context context, int position)
     {
+        globalContext = context;
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra("position",position);
         context.startActivity(intent);
