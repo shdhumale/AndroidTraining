@@ -6,8 +6,10 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import siddhu.test.com.myapplication.objects.Article;
+
 //Created from jsonschema2pojo
-public class NewsApiResponse {
+public class NewsApiArticleResponse {
 
     @SerializedName("status")
     @Expose
