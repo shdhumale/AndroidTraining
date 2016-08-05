@@ -133,15 +133,17 @@ https://android-arsenal.com/
       }
   }
 3- Update Adapter to reflect the following:
-4- update the list from NewsObjects to Article
-5- update constructor
-6- update all the places where we access the NewsObject
-7- When a response comes in MainActivity, do the following
-8- store it in CommonStuff
-9- create the adapter with the List we receive from the response like so:
+    - update the list from NewsObjects to Article
+    - update constructor
+    - update all the places where we access the NewsObject
+4- When a response comes in MainActivity, do the following
+    - store it in CommonStuff
+    - create the adapter with the List we receive from the response like so:
+  ```
   NewsApiArticleResponse newsApiArticleResponse = response.body();
   CommonStuff.setArticles(newsApiArticleResponse.getArticles());
   NewsAdapter newsAdapter = new NewsAdapter(newsApiArticleResponse.getArticles());
+  ```
 10- load the recyclerview like before
 11- show the progressbar before the loading begins
 12- hide it once the response is received

@@ -17,4 +17,17 @@ public class CommonUsage {
     public static void setAllNewArticle(List<Article> allNewArticle) {
         CommonUsage.allNewArticle = allNewArticle;
     }
+
+
+    public static List<Source> getAllNewSource() {
+        return allNewSource;
+    }
+
+    public static void setAllNewSource(List<Source> allNewSource) {
+        CommonUsage.allNewSource = allNewSource;
+    }
+
+    private static List<Source>  allNewSource;
+
+
 }
