@@ -116,3 +116,35 @@ https://android-arsenal.com/
 13-use call.enqueue to get a callback for the network response
 14-in the onResponse callback, use response.body() to get the NewsApiArticleResponse object
 15-Use breakpoints/debugging to verify the response
+
+----Day 3 Retrofit
+
+1- Remove NewsObjects
+2- Create CommonStuff.java and add a static List there, create getters and setters
+  public class CommonStuff {
+      public static List<Article> articles;
+
+      public static List<Article> getArticles() {
+          return articles;
+      }
+
+      public static void setArticles(List<Article> articles) {
+          CommonStuff.articles = articles;
+      }
+  }
+3- Update Adapter to reflect the following:
+4- update the list from NewsObjects to Article
+5- update constructor
+6- update all the places where we access the NewsObject
+7- When a response comes in MainActivity, do the following
+8- store it in CommonStuff
+9- create the adapter with the List we receive from the response like so:
+  NewsApiArticleResponse newsApiArticleResponse = response.body();
+  CommonStuff.setArticles(newsApiArticleResponse.getArticles());
+  NewsAdapter newsAdapter = new NewsAdapter(newsApiArticleResponse.getArticles());
+10- load the recyclerview like before
+11- show the progressbar before the loading begins
+12- hide it once the response is received
+13- Update DetailsActivity like so:
+14- get the List instead of List from CommonStuff
+15- update NewsObjects references to Article
