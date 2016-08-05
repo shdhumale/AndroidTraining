@@ -97,23 +97,22 @@ https://android-arsenal.com/
 
 
 --- Day 3 retrofit
-
-Add the following to build.gradle
+1-Add the following to build.gradle
 ```
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 ```
-Create a networking package
-Create a NewsAPI class inside the networking package
-Define the API_KEY and BASE_URL as constants
-Define an interface: NewsAPIInterface
-Create a method for each endpoint, pass source and sortBy as query parameters
-Annotate it with GET with the particular endpoint url along with the KEY
-define a static NewsAPIInterface object
-Create a static getNewsAPI method which will help us in accessing the singleton
-in case the NewsAPIInterface is null, create an instance of Retrofit with a) the basurl b) the gson converter
-create an instance of the newsapiinterface
-In MainActivity, use NewsAPI.getNewsAPI().getArticles to get Call
-use call.enqueue to get a callback for the network response
-in the onResponse callback, use response.body() to get the NewsApiArticleResponse object
-Use breakpoints/debugging to verify the response
+2-Create a networking package
+3-Create a NewsAPI class inside the networking package
+4-Define the API_KEY and BASE_URL as constants
+5-Define an interface: NewsAPIInterface
+6-Create a method for each endpoint, pass source and sortBy as query parameters
+7-Annotate it with GET with the particular endpoint url along with the KEY
+8-define a static NewsAPIInterface object
+9-Create a static getNewsAPI method which will help us in accessing the singleton
+10-in case the NewsAPIInterface is null, create an instance of Retrofit with a) the basurl b) the gson converter
+11-create an instance of the newsapiinterface
+12-In MainActivity, use NewsAPI.getNewsAPI().getArticles to get Call
+13-use call.enqueue to get a callback for the network response
+14-in the onResponse callback, use response.body() to get the NewsApiArticleResponse object
+15-Use breakpoints/debugging to verify the response
