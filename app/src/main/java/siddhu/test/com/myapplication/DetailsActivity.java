@@ -11,7 +11,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import siddhu.test.com.myapplication.objects.NewsObjects;
+import siddhu.test.com.myapplication.objects.Article;
+import siddhu.test.com.myapplication.objects.CommonUsage;
 
 /**
  * Created by admin on 8/4/2016.
@@ -33,7 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.news_details_progressbar);
         webView = (WebView) findViewById(R.id.activity_details_webview);
         int position = getIntent().getIntExtra(KEY_POSITION,DEFAULT_POSITION);
-        NewsObjects newsObjects = NewsObjects.getObjNewsObjects().get(position);
+        Article newsObjects = CommonUsage.getAllNewArticle().get(position);
         getSupportActionBar().setTitle(newsObjects.getTitle());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -51,7 +52,7 @@ public class DetailsActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
             }
         });
-        webView.loadUrl(newsObjects.getDetailsUrl());
+        webView.loadUrl(newsObjects.getUrl());
     }
 
     @Override

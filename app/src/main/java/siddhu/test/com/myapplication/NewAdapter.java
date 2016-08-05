@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import siddhu.test.com.myapplication.objects.Article;
+
 /*
 1- Create an adapter
 2- Create viewHolder inside adapter
@@ -38,17 +40,15 @@ import java.util.List;
 
  */
 
-import siddhu.test.com.myapplication.objects.NewsObjects;
-
 /**
  * Created by admin on 8/4/2016.
  */
 
 public class NewAdapter extends RecyclerView.Adapter<NewAdapter.NewsViewHolder> {
 
-    List<NewsObjects> newsItems;
+    List<Article> newsItems;
 
-    public NewAdapter(List<NewsObjects> newsItems) {
+    public NewAdapter(List<Article> newsItems) {
         this.newsItems = newsItems;
     }
 
@@ -63,9 +63,9 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.NewsViewHolder> 
     public void onBindViewHolder(NewsViewHolder holder, final int position) {
         if(newsItems == null)
             return;
-        NewsObjects currentNewsObject = newsItems.get(position);
+        Article currentNewsObject = newsItems.get(position);
         holder.title.setText(currentNewsObject.getTitle());
-        holder.date.setText(currentNewsObject.getDate());
+        holder.date.setText(currentNewsObject.getPublishedAt());
         holder.desc.setText(currentNewsObject.getDescription());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +74,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.NewsViewHolder> 
                 DetailsActivity.start(view.getContext(),position);
             }
         });
-        Glide.with(holder.newsImage.getContext()).load(currentNewsObject.getImageUrl()).into(holder.newsImage);
+        Glide.with(holder.newsImage.getContext()).load(currentNewsObject.getUrlToImage()).into(holder.newsImage);
     }
 
 

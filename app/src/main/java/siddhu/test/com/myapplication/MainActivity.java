@@ -15,14 +15,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import siddhu.test.com.myapplication.network.NewsAPI;
 import siddhu.test.com.myapplication.objects.Article;
+import siddhu.test.com.myapplication.objects.CommonUsage;
 import siddhu.test.com.myapplication.objects.NewsApiArticleResponse;
-import siddhu.test.com.myapplication.objects.NewsObjects;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    List<NewsObjects> newsItems = new ArrayList<NewsObjects>();
+    //List<NewsObjects> newsItems = new ArrayList<NewsObjects>();
 
 
     @Override
@@ -41,13 +41,15 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<NewsApiArticleResponse> call, Response<NewsApiArticleResponse> response) {
                 NewsApiArticleResponse newsApiArticleResponse = response.body();
                 List<Article> articles = newsApiArticleResponse.getArticles();
-                for(int i=0;i<articles.size();i++)
+               /* for(int i=0;i<articles.size();i++)
                 {
                     //String imageUrl, String title, String date, String description, String detailsUrl
                     NewsObjects newsObjects = new NewsObjects(articles.get(i).getUrlToImage(),articles.get(i).getTitle(),articles.get(i).getPublishedAt(),articles.get(i).getDescription(),articles.get(i).getUrl());
                     newsItems.add(newsObjects);
-                }
-                NewAdapter newAdapter = new NewAdapter(newsItems);
+                }*/
+                CommonUsage.setAllNewArticle(articles);
+
+                NewAdapter newAdapter = new NewAdapter(CommonUsage.getAllNewArticle());
                 recyclerView.setAdapter(newAdapter);
 
                 Toast.makeText(MainActivity.this, "response received", Toast.LENGTH_SHORT).show();
