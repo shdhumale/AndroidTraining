@@ -73,8 +73,6 @@ Create a horizontal progress bar in the details activity
 Show/Hide the progress bar when the page starts loading/finishes loading
 Implement "up functionality" in your details activity so that when you click on "up", you go back to the previous screen
 
---newsapi.org apikey
-a240d18a16554d7e89f79f5c904910e0
 
 ------Day 3
 1- Get the response from newsapi
