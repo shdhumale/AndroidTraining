@@ -83,7 +83,7 @@ Implement "up functionality" in your details activity so that when you click on 
 6- Give the correct packagename
 7- Give the correct class name (any class name)
 8- Change the annotation style to gson
-9- Download the zip file
+9- Download and extract the zip file
 9- Copy the files to the object package
 10- Include the gson dependency: compile 'com.google.code.gson:gson:2.7'
 11- Remove the generated annotation as well as the generated import to remove all errors
