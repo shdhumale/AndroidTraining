@@ -188,12 +188,13 @@ Day-3-Retrofit - Source-Article-All Applications
     -retrieve the position passed from the SourceAdapter
     -retrieve the Source at that position from CommonStuff
     -update the original NewsAPI article call with the name and sortBy information from that source like so:
-    ```
+    
+   ```
    Call<NewsApiArticleResponse> responseCall = NewsAPI.getNewsAPI().getArticles(source.getId(), source.getSortBysAvailable().get(0));
    ```
  9-This is because each source only supports a certain type of sortBy functionality and we just choose the first one
  
- -Day 4 -Fragment 1
+ - Day 4 -Fragment 1
  
  - Create a new Activity, call it SwipHomeActivity (Use New>Activity>Empty Activity)
 
@@ -205,11 +206,13 @@ Day-3-Retrofit - Source-Article-All Applications
 	-creating the object (described before) in jsonshcematopojo
 	-import the objects in our app
 	-write a new method in our NewsAPI interface like so:
+	
 	```
 	      @GET("sources")
 	      Call<NewsApiSourcesResponse> getSources();
 	```
 - Add support for storing and retrieving the Sources in CommonStuff
+
   ```
 public static List<Source> sources;
     public static List<Source> getSources() {
