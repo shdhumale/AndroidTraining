@@ -231,13 +231,13 @@ public static List<Source> sources;
 	- create a static method called generateFragment which takes a position and creates a ListOfArticlesFragment, use Bundle and setArguments to set arguments to the fragment
 - In SwipeHomeActivity
 
-	-create a ViewPagerAdapter which extends from FragmentStatePagerAdapter
-	-implement the getItem and getCount methods
-	-it should hold a List
-	-the constructor should take a FragmentManager and List
-	-update the getItem and getCount methods as required
-	-Make a network response call for the sources endpoint using Retrofit
-		-there, get the list of sources
-		-store it in commongstuff
+	- create a ViewPagerAdapter which extends from FragmentStatePagerAdapter
+	- implement the getItem and getCount methods
+	- it should hold a List
+	- the constructor should take a FragmentManager and List
+	- update the getItem and getCount methods as required
+	- Make a network response call for the sources endpoint using Retrofit
+		- there, get the list of sources
+		- store it in commongstuff
 		-create a ViewPagerAdapter based on the List
 		- set it on the adapter
