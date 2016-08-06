@@ -241,7 +241,8 @@ public static List<Source> sources;
 		- store it in commongstuff
 		-create a ViewPagerAdapter based on the List
 		- set it on the adapter
-- Preferences
+		
+10 Preferences
 
 	- create a method saveInPreferences(int position) to save the position in preferences
 	- Add a viewPager.addOnPageChangeListener to find out when a page is selected
