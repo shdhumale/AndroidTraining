@@ -150,3 +150,45 @@ https://android-arsenal.com/
 13- Update DetailsActivity like so:
 14- get the List instead of List from CommonStuff
 15- update NewsObjects references to Article
+
+Day-3-Retrofit - Source-Article-All Applications
+ 1-Create a new Activity, call it SourcesActivity (Use New>Activity>Empty Activity)
+ 2-Also give change its intent-filter to Main and Launcher, so that it launches when the app is opened
+ 3-Write the retrofit API definition for the sources endpoint, which includes
+    -getting a sample json response from newsapi.org
+    -validating it in jsoneditoronline
+    -creating the object (described before) in jsonshcematopojo
+    -import the objects in our app
+    -write a new method in our NewsAPI interface like so:
+    ```
+       @GET("sources")
+       Call<NewsApiSourcesResponse> getSources();
+    ```
+ 4-Add support for storing and retrieving the Sources in CommonStuff
+ ```
+     public static List<Source> sources;
+     public static List<Source> getSources() {
+         return sources;
+     }
+     public static void setSources(List<Source> sources) {
+         CommonStuff.sources = sources;
+     }
+  ```
+ 5-Create "SourceAdapter" for our SourceActivity
+    -create a view for our sources (image and name)
+    -create the corresponding viewholders
+    -create the List in the class along with the constructor
+    -implement all the methods (onBindViewHolder, onCreateViewHolder(ViewGroup parent, int viewType), getItemCount()) like before
+    -once you click on the linearlayout (the root view for every item), launch MainActivity, make sure to pass the position of the item clicked
+ 6-Create a layout for MainActivity which will have a progressbar and recyclerview like mainactivity
+ 7-MainActivity will make a retrofit network call for all the sources
+    -once you receive the response, create the adapter and populate the recyclerview
+    -also store the source list in CommonStuff
+ 8-In MainActivity
+    -retrieve the position passed from the SourceAdapter
+    -retrieve the Source at that position from CommonStuff
+    -update the original NewsAPI article call with the name and sortBy information from that source like so:
+    ```
+   Call<NewsApiArticleResponse> responseCall = NewsAPI.getNewsAPI().getArticles(source.getId(), source.getSortBysAvailable().get(0));
+   ```
+ 9-This is because each source only supports a certain type of sortBy functionality and we just choose the first one
