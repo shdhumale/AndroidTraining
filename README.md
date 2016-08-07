@@ -267,3 +267,4 @@ public static List<Source> sources;
 	- use the viewPager.setCurrentItem to set the viewpager position to the retrieved position
 
 https://developer.android.com/studio/publish/app-signing.html
+https://samsclass.info/128/proj/p10-proguard.htm
