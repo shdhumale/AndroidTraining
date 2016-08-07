@@ -2,6 +2,7 @@ https://github.com/triveous/vodafone
 
 # AndroidTraining
 Android Training programe
+- Genymotion
 - Ninja Mock
 - Wear
 - TV
@@ -14,7 +15,7 @@ Android Training programe
 - Sketch Tool (MAC), Adobe comets, 
 - pipete studio
 - pop prototyping
--zeplin
+- zeplin
 - invensionapp - prototype
 - marvelapp
 - RX -W/S call in loop
@@ -37,8 +38,15 @@ C:\Users\admin\AppData\Local\GitHub\PortableGit_624c8416ee51e205b3f892d1d904e06e
 
 
 - Universal Image Loader
+- Butter Knief
 - google tool box
-- newsapi.org
+- newsapi.org, programmableweb.com/publicapis.com
+- android-arsenal.com
+- jasoneditorparseronline.com
+- jsoneditoronline.com
+- jsonchema2pojo.com
+- permission dispatcher
+- 
 - https://github.com/triveous/vodafone
 - https://gist.github.com/s0h4m/00da1fac9059bf405e2b33e40c44e8e4
 
