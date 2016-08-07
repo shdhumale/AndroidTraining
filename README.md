@@ -265,3 +265,5 @@ public static List<Source> sources;
 	- get a references to the SharedPreference in PreferenceManager.getDefaultSharedPreferences
 	- use the getInt method on sharedPreferences to get the position
 	- use the viewPager.setCurrentItem to set the viewpager position to the retrieved position
+
+https://developer.android.com/studio/publish/app-signing.html
